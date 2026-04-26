@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+.chrome*/
+*.log
+*.png
+*.local
+.env
+.env.*
+!.env.example
