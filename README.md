@@ -1,99 +1,110 @@
-🚀 OrbitX — Live Space Dashboard
-# 🚀 OrbitX
+# OrbitX
 
-OrbitX is a modern, interactive space dashboard that brings real-time space data and visualizations to your browser.  
-It combines live satellite tracking, planetary exploration, and a dynamic sky map into a sleek, responsive web app.
+OrbitX is a browser-based space dashboard built with React and Vite.
 
----
+I made it as a visual exploration project around live orbital data, local sky calculations, and interactive space-themed UI. The app brings together ISS tracking, a planet view, and a sky map in one interface instead of splitting them into separate mini tools.
 
-## ✨ Features
+## What it includes
 
-- 🌍 **Live ISS Tracker**  
-  Track the International Space Station in real-time using an interactive map.
+- live ISS location tracking on an interactive map
+- a planet view driven by astronomy calculations
+- a local sky map with visible objects and constellation lines
+- a dashboard-style landing view with quick telemetry summaries
+- animated visuals built with Three.js, Framer Motion, and particle effects
 
-- 🪐 **Planet Viewer**  
-  Explore planets with detailed visuals and information.
+## Main views
 
-- 🌌 **2D Sky Map**  
-  Visualize constellations and celestial objects.
+### Dashboard
 
-- 📡 **Live Space Data**  
-  Integrated with APIs (like NASA) for real-time updates.
+The dashboard acts like a mission-control summary. It surfaces the current ISS state, visible planets, local observing location, and quick links into the deeper views.
 
-- 🎨 **Modern UI**  
-  Dark-themed, responsive design for desktop and mobile.
+### ISS tracker
 
-- ⚡ **Error Handling**  
-  Graceful fallback when APIs fail.
+This view shows:
 
----
+- current ISS position
+- recent orbital path
+- map-based visualization with coverage circle
+- basic telemetry such as altitude and velocity
 
-## 🛠️ Tech Stack
+### Planet viewer
 
-- **Frontend:** React + Vite  
-- **Maps:** Leaflet / React-Leaflet  
-- **Styling:** Tailwind CSS (or your choice)  
-- **APIs:** NASA APIs, ISS location API  
-- **Deployment:** (Add yours — Vercel / Netlify / etc.)
+This section presents planetary observations and a solar-system-style scene based on the current time and observer location.
 
----
+### Sky map
 
-## 📦 Installation
+The sky map focuses on what is visible from the user's horizon and lets the user inspect stars and other sky objects more interactively.
 
-Clone the repository:
+## Tech stack
+
+- React
+- Vite
+- Framer Motion
+- Three.js
+- Leaflet / React-Leaflet
+- Astronomy Engine
+- tsParticles
+
+## Local setup
 
 ```bash
 git clone https://github.com/ANSHUL-REAL/orbitx.git
 cd orbitx
-
-Install dependencies:
-
 npm install
-
-Run the development server:
-
 npm run dev
+```
 
-Open in browser:
+Open:
 
+```text
 http://localhost:5173
-📁 Project Structure
-orbitx/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── services/      # API calls
-│   ├── hooks/
-│   └── assets/
-├── public/
-├── index.html
-├── package.json
-└── vite.config.js
-🌐 APIs Used
-NASA Open APIs
-ISS Location API
-(Add any others you used)
-🚧 Future Improvements
-🛰️ Satellite tracking for multiple objects
-🌠 3D space visualization
-📱 Mobile app version
-🧠 AI-powered space insights
-🕶️ AR/VR support
-🤝 Contributing
+```
 
-Contributions are welcome!
+Production build:
 
-Fork the repo
-Create a new branch (feature/your-feature)
-Commit changes
-Open a Pull Request
-📜 License
+```bash
+npm run build
+npm run preview
+```
 
-This project is licensed under the MIT License.
+## Project structure
 
-👨‍💻 Author
+```text
+src/
+  components/        Reusable UI and visual components
+  data/              Static sky object data
+  services/          ISS, astronomy, and location services
+  utils/             Formatting helpers
+  App.jsx            Main app shell and views
+  styles.css         Styling
+```
+
+## APIs and data sources
+
+- ISS position feed
+- astronomy calculations via `astronomy-engine`
+- browser geolocation for observer context, with fallback location handling
+
+## Why this repo looked weak before
+
+The older README was too generic, had placeholder text, and did not really describe what the app already does. This version is more accurate to the current codebase and less like a template.
+
+## Limitations
+
+- accuracy depends on the external ISS data source and browser location access
+- the app is a visualization project, not a scientific tool
+- some views prioritize visual exploration over strict simulation depth
+
+## Next improvements
+
+- cleaner mobile layout for denser data panels
+- selectable time offsets for future sky states
+- support for more orbital objects beyond the ISS
+- hosted demo link
+
+## Author
 
 Anshul Nautiyal
 
-GitHub: https://github.com/ANSHUL-REAL
-LinkedIn: https://www.linkedin.com/in/anshul-nautiyal-42760236b/
+- GitHub: [https://github.com/ANSHUL-REAL](https://github.com/ANSHUL-REAL)
+- LinkedIn: [https://www.linkedin.com/in/anshul-nautiyal-42760236b/](https://www.linkedin.com/in/anshul-nautiyal-42760236b/)
